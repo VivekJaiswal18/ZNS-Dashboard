@@ -76,22 +76,22 @@ export default function Home() {
   const [pieChartData, setPieChartData] = useState(null);
   const [querychartResult, setQuerychartResult] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('/api/chart');
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch data');
-  //       }
-  //       const result = await response.json();
-  //       setQuerychartResult(result);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/chart');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const result = await response.json();
+        setQuerychartResult(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
 
   useEffect(() => {
@@ -126,21 +126,21 @@ export default function Home() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchPieChartData = async () => {
-      try {
-        const response = await fetch('/api/pie');
-        if (!response.ok) {
-          throw new Error('Failed to fetch pie chart data');
-        }
-        const result = await response.json();
-        setPieChartData(result);
-      } catch (error) {
-        console.error('Error fetching pie chart data:', error);
-      }
-    };
-    fetchPieChartData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPieChartData = async () => {
+  //     try {
+  //       const response = await fetch('/api/pie');
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch pie chart data');
+  //       }
+  //       const result = await response.json();
+  //       setPieChartData(result);
+  //     } catch (error) {
+  //       console.error('Error fetching pie chart data:', error);
+  //     }
+  //   };
+  //   fetchPieChartData();
+  // }, []);
 
   return (
     <div>
@@ -155,14 +155,14 @@ export default function Home() {
         )}
       </div>
 
-      <div className="max-h-fit max-w-xl">
-        {/* Render the chart only after data is available */}
+  {/* <div className="max-h-fit max-w-xl">
         {querychartResult ? (
           <DuneNewBarChart data={querychartResult} />
         ) : (
           <p>Loading...</p>
         )}
-      </div>
+      </div> */}
+      
       
     </div>
 <div>
@@ -171,13 +171,13 @@ export default function Home() {
         {/* {pieChartData} */}
       </div>
       {/* <DunePieChart/> */}
-      <div className="max-w-xl mx-auto">
+      {/* <div className="max-w-xl mx-auto">
         {querychartResult ? (
           <DuneBarChart data={querychartResult} />
         ) : (
           <p>Loading chart data...</p>
         )}
-      </div>
+      </div> */}
     </div>
     // </div>
   );
