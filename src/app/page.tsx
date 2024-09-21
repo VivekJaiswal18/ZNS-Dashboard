@@ -69,11 +69,11 @@ import Header from "@/components/Header";
 import DuneBarChart from "@/components/chart";
 // import DunePieChart from "@/components/pieChart"; 
 // import { DuneClient } from "@duneanalytics/client-sdk";
-import DuneNewBarChart from "@/components/mintchart";
+// import DuneNewBarChart from "@/components/mintchart";
 export default function Home() {
   const [queryResult, setQueryResult] = useState(null);
   // const [querychartResult, setQuerychartResult] = useState(null);
-  const [pieChartData, setPieChartData] = useState(null);
+  // const [pieChartData, setPieChartData] = useState(null);
   const [querychartResult, setQuerychartResult] = useState(null);
 
   useEffect(() => {
