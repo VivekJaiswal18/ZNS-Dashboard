@@ -67,7 +67,7 @@ import { useState, useEffect } from "react";
 // import DuneDataTable from "@/components/data";
 import Header from "@/components/Header";
 import DuneBarChart from "@/components/chart";
-import DunePieChart from "@/components/pieChart"; 
+// import DunePieChart from "@/components/pieChart"; 
 // import { DuneClient } from "@duneanalytics/client-sdk";
 import DuneNewBarChart from "@/components/mintchart";
 export default function Home() {
