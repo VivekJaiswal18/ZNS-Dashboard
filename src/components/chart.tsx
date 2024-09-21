@@ -72,7 +72,7 @@ interface Dataset {
   borderWidth: number;
 }
 
-// @ts-ignore
+// @ts-expect-error: The types for this third-party function are incorrect
 const DuneBarChart = ({ data }) => {
   const [chartData, setChartData] = useState<{
     labels: string[];
@@ -84,9 +84,9 @@ const DuneBarChart = ({ data }) => {
 
   useEffect(() => {
     if (data) {
-        // @ts-ignore
+        // @ts-expect-error: The types for this third-party function are incorrect
       const chains = data.result.rows.map((row) => row.chain);
-      // @ts-ignore
+      // @ts-expect-error: The types for this third-party function are incorrect
       const minters = data.result.rows.map((row) => row.minters);
 
       setChartData({
