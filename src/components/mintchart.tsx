@@ -185,71 +185,71 @@
 
 // export default DuneBarChart;
 
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { useEffect, useState } from 'react';
+// import { Bar } from 'react-chartjs-2';
+// import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+// import { useEffect, useState } from 'react';
 
-// Register required chart.js components
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+// // Register required chart.js components
+// ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-// Define the type for the dataset
-interface Dataset {
-  label: string;
-  data: number[];
-  backgroundColor: string;
-  borderColor: string;
-  borderWidth: number;
-}
+// // Define the type for the dataset
+// interface Dataset {
+//   label: string;
+//   data: number[];
+//   backgroundColor: string;
+//   borderColor: string;
+//   borderWidth: number;
+// }
 
-const DuneBarChart = ({ data }) => {
-  const [chartData, setChartData] = useState<{
-    labels: string[];
-    datasets: Dataset[];
-  }>({
-    labels: [],
-    datasets: []
-  });
+// const DuneBarChart = ({ data }) => {
+//   const [chartData, setChartData] = useState<{
+//     labels: string[];
+//     datasets: Dataset[];
+//   }>({
+//     labels: [],
+//     datasets: []
+//   });
 
-  useEffect(() => {
-    if (data) {
-      const labels = data.result.rows.map((row) => row.label); // Update this based on actual data structure
-      const values = data.result.rows.map((row) => row.value); // Update this based on actual data structure
+//   useEffect(() => {
+//     if (data) {
+//       const labels = data.result.rows.map((row) => row.label); // Update this based on actual data structure
+//       const values = data.result.rows.map((row) => row.value); // Update this based on actual data structure
 
-      setChartData({
-        labels: labels,
-        datasets: [
-          {
-            label: 'Data Label', // Update this as needed
-            data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }
-        ]
-      });
-    }
-  }, [data]);
+//       setChartData({
+//         labels: labels,
+//         datasets: [
+//           {
+//             label: 'Data Label', // Update this as needed
+//             data: values,
+//             backgroundColor: 'rgba(75, 192, 192, 0.6)',
+//             borderColor: 'rgba(75, 192, 192, 1)',
+//             borderWidth: 1
+//           }
+//         ]
+//       });
+//     }
+//   }, [data]);
 
-  return (
-    <div className="chart-container">
-      <Bar
-        data={chartData}
-        options={{
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'top'
-            },
-            title: {
-              display: true,
-              text: 'Data Visualization Title' // Update as needed
-            }
-          }
-        }}
-      />
-    </div>
-  );
-};
+//   return (
+//     <div className="chart-container">
+//       <Bar
+//         data={chartData}
+//         options={{
+//           responsive: true,
+//           plugins: {
+//             legend: {
+//               position: 'top'
+//             },
+//             title: {
+//               display: true,
+//               text: 'Data Visualization Title' // Update as needed
+//             }
+//           }
+//         }}
+//       />
+//     </div>
+//   );
+// };
 
-export default DuneBarChart;
+// export default DuneBarChart;
 

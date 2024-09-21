@@ -72,6 +72,7 @@ interface Dataset {
   borderWidth: number;
 }
 
+// @ts-ignore
 const DuneBarChart = ({ data }) => {
   const [chartData, setChartData] = useState<{
     labels: string[];
@@ -83,7 +84,9 @@ const DuneBarChart = ({ data }) => {
 
   useEffect(() => {
     if (data) {
+        // @ts-ignore
       const chains = data.result.rows.map((row) => row.chain);
+      // @ts-ignore
       const minters = data.result.rows.map((row) => row.minters);
 
       setChartData({
