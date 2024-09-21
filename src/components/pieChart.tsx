@@ -83,7 +83,7 @@
 // export default DunePieChart;
 
 // export default async function DunePieChart(){
-//     const dune = new DuneClient("jXCBUT422iRA9bJ8G14Cgog5MFLNGEMd");
+//     const dune = new DuneClient("");
 // const query_result: any = await dune.getLatestResult({queryId: 4080796});
 //     return(
 //         <div>{query_result}</div>

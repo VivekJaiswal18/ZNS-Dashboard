@@ -7,7 +7,7 @@
 
 
 // export default async function Home() {
-// const dune = new DuneClient("jXCBUT422iRA9bJ8G14Cgog5MFLNGEMd");
+// const dune = new DuneClient("");
 // const query_result = await dune.getLatestResult({queryId: 4083852});
 
 
@@ -64,11 +64,11 @@
 
 'use client'
 import { useState, useEffect } from "react";
-import DuneDataTable from "@/components/data";
+// import DuneDataTable from "@/components/data";
 import Header from "@/components/Header";
 import DuneBarChart from "@/components/chart";
-// import DunePieChart from "@/components/pieChart"; 
-import { DuneClient } from "@duneanalytics/client-sdk";
+import DunePieChart from "@/components/pieChart"; 
+// import { DuneClient } from "@duneanalytics/client-sdk";
 import DuneNewBarChart from "@/components/mintchart";
 export default function Home() {
   const [queryResult, setQueryResult] = useState(null);
