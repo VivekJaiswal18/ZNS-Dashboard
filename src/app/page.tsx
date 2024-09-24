@@ -67,11 +67,14 @@ import { useState, useEffect } from "react";
 // import DuneDataTable from "@/components/data";
 import Header from "@/components/Header";
 import DuneBarChart from "@/components/chart";
+import { DuneClient } from "@duneanalytics/client-sdk";
+import DuneBnbBarChart from "@/components/Bnbdata";
 // import DunePieChart from "@/components/pieChart"; 
 // import { DuneClient } from "@duneanalytics/client-sdk";
 // import DuneNewBarChart from "@/components/mintchart";
-export default function Home() {
+export default  function Home() {
   const [queryResult, setQueryResult] = useState(null);
+  const [bnbqueryResult, bnbsetQueryResult] = useState(null);
   // const [querychartResult, setQuerychartResult] = useState(null);
   // const [pieChartData, setPieChartData] = useState(null);
   // const [querychartResult, setQuerychartResult] = useState(null);
@@ -103,6 +106,23 @@ export default function Home() {
         }
         const result = await response.json();
         setQueryResult(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/bnbdata');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const result = await response.json();
+        bnbsetQueryResult(result);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -142,6 +162,8 @@ export default function Home() {
   //   fetchPieChartData();
   // }, []);
 
+
+
   return (
     <div>
       <Header/>
@@ -154,15 +176,15 @@ export default function Home() {
           <p>Loading...</p>
         )}
       </div>
+     
 
-  {/* <div className="max-h-fit max-w-xl">
-        {querychartResult ? (
-          <DuneNewBarChart data={querychartResult} />
+  <div className="max-h-fit max-w-xl">
+        {bnbqueryResult ? (
+          <DuneBnbBarChart data={bnbqueryResult} />
         ) : (
           <p>Loading...</p>
         )}
-      </div> */}
-      
+      </div>
       
     </div>
 <div>
@@ -178,8 +200,10 @@ export default function Home() {
           <p>Loading chart data...</p>
         )}
       </div> */}
+      
+      
     </div>
-    // </div>
+    //  </div>
   );
 }
 
