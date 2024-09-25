@@ -174,7 +174,7 @@ const DuneBnbBarChart = ({ data }: { data: any }) => {
           {
             label: 'Minting in last 24 hours on BNB chain',
             data: transactions,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            backgroundColor: 'rgba(245, 205, 73)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
           },

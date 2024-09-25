@@ -95,7 +95,7 @@ const DuneBarChart = ({ data }) => {
           {
             label: 'Minters by Chain',
             data: minters,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            backgroundColor: 'rgba(198, 255, 66)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
           }

@@ -67,8 +67,9 @@ import { useState, useEffect } from "react";
 // import DuneDataTable from "@/components/data";
 import Header from "@/components/Header";
 import DuneBarChart from "@/components/chart";
-import { DuneClient } from "@duneanalytics/client-sdk";
+// import { DuneClient } from "@duneanalytics/client-sdk";
 import DuneBnbBarChart from "@/components/Bnbdata";
+import TaikoDataDisplay from "@/components/TaikoDataDisplay";
 // import DunePieChart from "@/components/pieChart"; 
 // import { DuneClient } from "@duneanalytics/client-sdk";
 // import DuneNewBarChart from "@/components/mintchart";
@@ -167,18 +168,19 @@ export default  function Home() {
   return (
     <div>
       <Header/>
-    <div className="bg-header pt-36 h-screen">
+    <div className="bg-header pt-36 ">
+      <h1 className="text-3xl m-10">Data Across Chain</h1>
       <div className="max-h-fit max-w-xl">
-        {/* Render the chart only after data is available */}
         {queryResult ? (
           <DuneBarChart data={queryResult} />
         ) : (
           <p>Loading...</p>
         )}
       </div>
-     
 
-  <div className="max-h-fit max-w-xl">
+      <h1 className="text-3xl m-10">BNB Chain Data</h1>
+
+       <div className="max-h-fit max-w-xl mb-16">
         {bnbqueryResult ? (
           <DuneBnbBarChart data={bnbqueryResult} />
         ) : (
@@ -186,6 +188,7 @@ export default  function Home() {
         )}
       </div>
       
+      <TaikoDataDisplay/>
     </div>
 <div>
         {/* <h1>{pieChartData ? 'Pie Chart Data Loaded' : 'Loading Pie Chart...'}</h1> */}
